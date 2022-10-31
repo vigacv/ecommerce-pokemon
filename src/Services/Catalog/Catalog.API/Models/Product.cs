@@ -25,7 +25,7 @@ namespace Catalog.Models
 
 
         [JsonProperty(PropertyName = "pictures")]
-        public ICollection<ProductPicture> Pictures { get; set; } = new List<ProductPicture>();
+        public ICollection<ProductPicture>? Pictures { get; set; } = new List<ProductPicture>();
     }
 
     public class ProductPicture

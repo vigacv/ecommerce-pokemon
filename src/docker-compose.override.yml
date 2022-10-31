@@ -1,0 +1,60 @@
+version: '3.4'
+
+services:
+  catalog.api:
+    container_name: catalog.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8000
+      - "BlobStorage:ConnectionString=DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://azurite:10000/devstoreaccount1;"
+      - "CosmosDb:ConnectionString=mongodb://catalog.db:27017"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - azurite
+
+  azurite:
+    image: mcr.microsoft.com/azure-storage/azurite
+    container_name: azurite
+    ports:
+      - "10000:10000"
+      - "10001:10001"
+      - "10002:10002"
+    volumes:
+      - azurite_data:/data
+
+  catalog.db:
+    image: mongo
+    container_name: catalog.db
+    ports:
+      - "27017:27017"
+    volumes:
+      - catalog_db_data:/data/db
+
+volumes:
+  azurite_data:
+  catalog_db_data:
+
+  # cosmos_db_emulator:
+  #   container_name: cosmos_db_emulator
+  #   tty: true
+  #   environment:
+  #     - AZURE_COSMOS_EMULATOR_PARTITION_COUNT=10
+  #     - AZURE_COSMOS_EMULATOR_ENABLE_DATA_PERSISTENCE=true
+  #     - AZURE_COSMOS_EMULATOR_MONGODB_COMPUTE_ENDPOINT=true
+  #     - AZURE_COSMOS_EMULATOR_MONGODB_PORT=10255
+  #   ports:
+  #     - "8081:8081"
+  #     - "8900:8900"
+  #     - "8901:8901"
+  #     - "8979:8979"
+  #     - "10250:10250"
+  #     - "10251:10251"
+  #     - "10252:10252"
+  #     - "10253:10253"
+  #     - "10254:10254"
+  #     - "10255:10255"
+  #     - "10256:10256"
+  #     - "10350:10350"
+  #   volumes:
+  #     - cosmos_vol:/data/db
