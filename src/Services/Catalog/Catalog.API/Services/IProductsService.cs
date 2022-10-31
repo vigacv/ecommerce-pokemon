@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Catalog.API.Models;
 using Catalog.Models;
 
 namespace Catalog.API.Services
@@ -10,7 +11,7 @@ namespace Catalog.API.Services
     {
         Task<List<Product>> GetProducts();
         Task<Product> GetProduct(string id);
-        Task Create(Product product);
+        Task<Product> Create(ProductForm product);
         Task<bool> Update(string id, Product product);
         Task<bool> Delete(string id);
     }

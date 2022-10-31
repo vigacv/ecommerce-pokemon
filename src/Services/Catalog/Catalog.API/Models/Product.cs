@@ -13,17 +13,27 @@ namespace Catalog.Models
 
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
-        
+
         [JsonProperty(PropertyName = "description")]
         public string Description { get; set; }
-        
+
         [JsonProperty(PropertyName = "price")]
         public decimal Price { get; set; }
-        
-        [JsonProperty(PropertyName = "pictureUris")]
-        public ICollection<string> PictureUris { get; set; }
-        
+
         [JsonProperty(PropertyName = "category")]
         public string Category { get; set; }
+
+
+        [JsonProperty(PropertyName = "pictures")]
+        public ICollection<ProductPicture> Pictures { get; set; } = new List<ProductPicture>();
+    }
+
+    public class ProductPicture
+    {
+        [JsonProperty(PropertyName = "name")]
+        public string Name { get; set; }
+
+        [JsonProperty(PropertyName = "uri")]
+        public string Uri { get; set; }
     }
 }

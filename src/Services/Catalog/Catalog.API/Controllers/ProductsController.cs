@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Catalog.API.Models;
 using Catalog.API.Services;
 using Catalog.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -33,23 +34,28 @@ namespace Catalog.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateProduct(Product product)
+        public async Task<IActionResult> CreateProduct([FromForm] ProductForm product)
         {
-            await _productsService.Create(product);
-            return Ok();
+            return Ok(await _productsService.Create(product));
         }
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProduct(string id, Product product)
         {
-            await _productsService.Update(id, product);
+            var result = await _productsService.Update(id, product);
+
+            if(!result) return NotFound();
+
             return Ok();
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(string id)
         {
-            await _productsService.Delete(id);
+            var result = await _productsService.Delete(id);
+            
+            if (!result) return NotFound();
+
             return Ok();
         }
     }

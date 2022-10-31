@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Catalog.API.Models
 {
-    public class ProductDto
+    public class ProductForm
     {
 
         public string Name { get; set; }

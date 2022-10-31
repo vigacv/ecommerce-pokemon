@@ -1,5 +1,7 @@
 using System.Configuration;
 using Catalog.API.Data;
+using Catalog.API.Infrastructure;
+using Catalog.API.Mapper;
 using Catalog.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<ICatalogContext, CatalogContext>();
 builder.Services.AddScoped<IProductsService, ProductsService>();
+builder.Services.AddScoped<IPicturesAccessor, PicturesAccessor>();
+builder.Services.AddScoped<IPicturesService, PicturesService>();
+
+builder.Services.AddAutoMapper(typeof(MappingProfiles));
 
 var app = builder.Build();
 
