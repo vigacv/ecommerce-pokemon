@@ -20,8 +20,8 @@ namespace Catalog.Models
         [JsonProperty(PropertyName = "price")]
         public decimal Price { get; set; }
         
-        [JsonProperty(PropertyName = "pictureUri")]
-        public string PictureUri { get; set; }
+        [JsonProperty(PropertyName = "pictureUris")]
+        public ICollection<string> PictureUris { get; set; }
         
         [JsonProperty(PropertyName = "category")]
         public string Category { get; set; }
