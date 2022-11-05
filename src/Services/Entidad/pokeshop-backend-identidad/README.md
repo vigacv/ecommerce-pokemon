@@ -28,9 +28,11 @@
 
 ■ Descomentar el archivo **PokeshopIdentidadRunner**
 
+■ Cambiar el _spring.jpa.hibernate.ddl-auto=_**create-drop** del *_application.properties_*
+
 ■ _Correr el proyecto_
 
 ### Mantener el proyecto
 ■ Comentar el archivo anterior **PokeshopIdentidadRunner**
 
-■ Cambiar el _spring.jpa.hibernate.ddl-auto=_**create-drop** del *_application.properties_*
+■ Cambiar el _spring.jpa.hibernate.ddl-auto=_**update** del *_application.properties_*
