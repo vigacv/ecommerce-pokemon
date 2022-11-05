@@ -9,4 +9,6 @@ public interface TbUsuarioDao extends JpaRepository<TbUsuario, Integer> {
 
     Optional<TbUsuario> findByEmail(String email);
 
+    Optional<TbUsuario> findByEmailAndEstado(String email, Boolean estado);
+
 }

@@ -8,46 +8,47 @@ import static com.nyobyte.util.enumerado.EnumTypeException.E;
 
 public enum EnumIdentidadError implements GenericError {
 
-    /// Errores
-    /// Generales
-    ER00000("PSI00000", "", E),
-    ER00001("PSI00001", "El código ya existe", E),
-    ER00002("PSI00002", "Se ha alcanzado el límite de correlativos", E),
-    ER00003("PSI00003", "El id no debe ser null", E),
-    ER00004("PSI00004", "La entidad no existe", E),
-    ER00005("PSI00005", "El codigo ya se encuentra registrado", E),
-    ER00006("PSI00006", "No se pueden eliminar los registros", E),
-    ER00007("PSI00007", "El rango de fechas ya se encuentra registrado en otro rango", E),
-    ER00008("PSI00008", "Ya existe un registro con control predeterminado", E),
-    ER00009("PSI00009", "Ya existe un registro con este id", E),
-    ER00010("PSI00010", "El id debe ser null", E),
-    ER00011("PSI00011", "El codigo no pertenece a este registro", E),
-    ER00012("PSI00012", "El formato de fecha ingresado es incorrecto", E),
-    ER00013("PSI00013", "Los formatos de la imagen deben de ser image/png, image/jpeg, image/jpg o image/svg", E),
-    ER00014("PSI00014", "No se pueden eliminar los registros", E),
-    ER00015("PSI00015", "La imagen es muy pesada, debe ser menor a 10MB", E),
+    /* ERRORES */
+    // Generales
+    ER000("PSI-ER-000", "", E),
+    ER001("PSI-ER-001", "El id no debe ser null", E),
+    ER002("PSI-ER-002", "El registro no existe", E),
+    ER003("PSI-ER-003", "El registro no pertenece", E),
+    ER004("PSI-ER-004", "Ya existe este registro", E),
+    ER005("PSI-ER-005", "No se pueden eliminar los registros", E),
+    ER006("PSI-ER-006", "No implementado", E),
 
-    /// Advertencias
-    /// Generales
-    AD100000("GEN10000", "", A),
-    AD100001("GEN10001", "El código es requerido", A),
-    AD100002("GEN10002", "El nombre es requerido", A),
-    AD100003("GEN10003", "El estado es requerido", A),
-    AD100004("GEN10004", "La fecha es requerida ", A),
+    /* ADVERTENCIAS */
+    // Generales
+    AD000("PSI-AD-000", "", A),
+    AD001("PSI-AD-001", "El número de documento es requerido", A),
+    AD002("PSI-AD-002", "El código es requerido", A),
+    AD003("PSI-AD-003", "El email es requerido", A),
+    AD004("PSI-AD-004", "El nombre es requerido", A),
+    AD005("PSI-AD-005", "El estado es requerido", A),
 
     // TbUsuario
-    AD100100("MSI100000", "", A),
+    AD100("PSI-AD-100", "El usuario es requerido", A),
+    AD101("PSI-AD-101", "La clave es requerida", A),
 
     // TbPersona
-    AD100400("RC100400", "El primer apellido es requerido", A),
-    AD100401("RC100401", "La dirección es requerida", A),
-    AD100402("RC100402", "El celular es requerido", A),
-    AD100403("RC100403", "El género es requerido", A),
-    AD100404("RC100404", "El número de documento es requerido", A),
-    AD100405("RC100405", "El tipo de documento es requerido", A),
-    AD100406("RC100406", "El estado civil es requerido", A),
-    AD100407("RC100407", "El distrito es requerido", A),
+    AD201("PSI-AD-201", "El primer apellido es requerido", A),
+    AD202("PSI-AD-202", "La dirección es requerida", A),
+    AD203("PSI-AD-203", "El celular es requerido", A),
+    AD204("PSI-AD-204", "El género es requerido", A),
+    AD205("PSI-AD-205", "El estado civil es requerido", A),
+    AD206("PSI-AD-206", "La fecha de nacimiento es requerida", A),
 
+    // TbProveedor 3
+
+    // TbTipoDocumento
+    AD400("PSI-AD-400", "El tipo de documento es requerido", A),
+    AD401("PSI-AD-401", "La descripción es requerida", A),
+    AD402("PSI-AD-402", "La longitud mínima es requerida", A),
+    AD403("PSI-AD-403", "La longitud máxima es requerida", A),
+
+    // TbDistrito 5
+    AD500("PSI-AD-500", "El distrito es requerido", A),
     ;
 
     EnumIdentidadError(String codigo, String mensaje, EnumTypeException type) {
