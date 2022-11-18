@@ -3,7 +3,7 @@
 
 # Manera local
 ### Dependencias
-■ Descargar e instalar el proyecto: https://github.com/NyoByte/nyobyte-backend-utils de la rama **develop**.
+■ Descargar e instalar el proyecto: https://github.com/NyoByte/pokeshop-backend-utils de la rama **develop**.
 
 ■ Descargar e instalar el proyecto: https://github.com/NyoByte/pokeshop-backend-entity-identidad de la rama **develop**.
 

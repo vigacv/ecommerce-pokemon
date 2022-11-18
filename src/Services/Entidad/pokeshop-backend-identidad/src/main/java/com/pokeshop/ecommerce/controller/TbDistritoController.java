@@ -1,12 +1,11 @@
 package com.pokeshop.ecommerce.controller;
 
-import com.nyobyte.controller.GenericController;
-import com.nyobyte.service.GenericCrud;
-import com.nyobyte.util.ApiResponse;
 import com.pokeshop.ecommerce.dto.TbDistritoDto;
 import com.pokeshop.ecommerce.entity.entidad.TbDistrito;
 import com.pokeshop.ecommerce.entity.entidad.TbUsuario;
+import com.pokeshop.ecommerce.service.GenericCrud;
 import com.pokeshop.ecommerce.service.TbDistritoService;
+import com.pokeshop.ecommerce.util.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.http.ResponseEntity;

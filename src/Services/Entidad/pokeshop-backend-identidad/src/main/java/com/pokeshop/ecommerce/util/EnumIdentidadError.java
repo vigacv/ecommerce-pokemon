@@ -1,10 +1,9 @@
 package com.pokeshop.ecommerce.util;
 
-import com.nyobyte.util.GenericError;
-import com.nyobyte.util.enumerado.EnumTypeException;
+import com.pokeshop.ecommerce.util.enumerado.EnumTypeException;
 
-import static com.nyobyte.util.enumerado.EnumTypeException.A;
-import static com.nyobyte.util.enumerado.EnumTypeException.E;
+import static com.pokeshop.ecommerce.util.enumerado.EnumTypeException.A;
+import static com.pokeshop.ecommerce.util.enumerado.EnumTypeException.E;
 
 public enum EnumIdentidadError implements GenericError {
 
