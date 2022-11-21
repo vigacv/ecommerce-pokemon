@@ -10,6 +10,7 @@ namespace Catalog.API.Services
     public interface IProductsService
     {
         Task<List<Product>> GetProducts();
+        Task<List<Product>> GetProductsByCategory(string category);
         Task<Product> GetProduct(string id);
         Task<Product> Create(ProductForm product);
         Task<bool> Update(string id, Product product);

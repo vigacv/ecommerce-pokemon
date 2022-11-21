@@ -30,6 +30,14 @@ namespace Catalog.API.Services
                         .Find(p => true)
                         .ToListAsync();
         }
+
+        public async Task<List<Product>> GetProductsByCategory(string category)
+        {
+            return await _context.Products
+                        .Find(p => p.Category == category)
+                        .ToListAsync();
+        }
+
         public async Task<Product> GetProduct(string id)
         {
             return await _context.Products

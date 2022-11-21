@@ -16,7 +16,7 @@ namespace Catalog.API.Data
 
             Products = database.GetCollection<Product>(configuration.GetValue<string>("CosmosDb:CollectionName"));
 
-            //CatalogContextSeed.SeedData(Products);
+            CatalogContextSeed.SeedAsync(this).Wait();
         }
         public IMongoCollection<Product> Products { get; }
     }

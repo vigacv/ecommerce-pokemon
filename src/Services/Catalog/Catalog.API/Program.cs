@@ -13,6 +13,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(opt => {
+    opt.AddPolicy("CorsPolicy", policy => {
+        policy.WithOrigins("http://localhost:3000");
+    });
+});
+
 builder.Services.AddScoped<ICatalogContext, CatalogContext>();
 builder.Services.AddScoped<IProductsService, ProductsService>();
 builder.Services.AddScoped<IPicturesAccessor, PicturesAccessor>();
@@ -21,6 +27,8 @@ builder.Services.AddScoped<IPicturesService, PicturesService>();
 builder.Services.AddAutoMapper(typeof(MappingProfiles));
 
 var app = builder.Build();
+
+app.UseCors("CorsPolicy");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
