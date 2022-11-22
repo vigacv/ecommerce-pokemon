@@ -38,7 +38,7 @@ public class TbDistritoController extends GenericController<TbDistritoDto, TbDis
         TbDistritoDto dto = getCrud().findById(id, template);
         if (dto != null) {
             WebMvcLinkBuilder linkTo = linkTo(methodOn(this.getClass()).findById(id));
-            dto.add(linkTo.withRel(TbUsuario.class.getSimpleName() + "-resource"));
+            dto.add(linkTo.withRel(TbDistrito.class.getSimpleName() + "-resource"));
         }
         return ResponseEntity.ok(ApiResponse.ok("Obtener Distrito", dto));
     }
