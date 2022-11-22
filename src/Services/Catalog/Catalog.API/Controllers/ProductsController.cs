@@ -26,6 +26,12 @@ namespace Catalog.Controllers
             return Ok(await _productsService.GetProducts());
         }
 
+        [HttpGet("Category/{category}")]
+        public async Task<IActionResult> GetProductsByCategory(string category)
+        {
+            return Ok(await _productsService.GetProductsByCategory(category));
+        }
+        
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProduct(string id)
         {
