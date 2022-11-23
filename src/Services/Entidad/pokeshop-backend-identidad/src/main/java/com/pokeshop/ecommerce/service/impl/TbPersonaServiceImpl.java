@@ -30,6 +30,7 @@ public class TbPersonaServiceImpl implements TbPersonaService {
 
     @Override
     public TbPersonaDto insert(TbPersonaDto dto) {
+        ValidateUtil.requerido(dto.getTbUsuario(), EnumIdentidadError.AD100);
         TbUsuarioDto usuario = usuarioService.insert(dto.getTbUsuario());
         validate(dto, "I");
         dto.setTbUsuario(usuario);
@@ -40,6 +41,7 @@ public class TbPersonaServiceImpl implements TbPersonaService {
 
     @Override
     public TbPersonaDto update(TbPersonaDto tbPersonaDto) {
+        ValidateUtil.evaluar(false, EnumIdentidadError.ER006);
         return null;
     }
 

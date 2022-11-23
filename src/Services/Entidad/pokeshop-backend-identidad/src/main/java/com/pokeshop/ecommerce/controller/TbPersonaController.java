@@ -40,7 +40,6 @@ public class TbPersonaController extends GenericController<TbPersonaDto, TbPerso
             WebMvcLinkBuilder linkTo = linkTo(methodOn(this.getClass()).findById(id));
             dto.add(linkTo.withRel(TbPersona.class.getSimpleName() + "-resource"));
         }
-        System.out.println("ACHATA PERRO");
         return ResponseEntity.ok(ApiResponse.ok("Obtener Persona", dto));
     }
 
