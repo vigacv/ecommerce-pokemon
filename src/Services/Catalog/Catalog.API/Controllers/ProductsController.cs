@@ -19,6 +19,7 @@ namespace Catalog.Controllers
         {
             _productsService = productsService;
         }
+        //test
 
         [HttpGet]
         public async Task<IActionResult> GetProducts()
