@@ -125,7 +125,7 @@ stages:
       displayName: 'Deploy main module'
       inputs:
         mavenPomFile: '$(System.DefaultWorkingDirectory)/src/pokeshop-backend/$(mainProjectName)/pom.xml'
-        options: 'clean package -Dmaven.test.skip=true'
+        options: 'clean package -Dmaven.test.skip=true -P prod'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         javaHomeOption: 'Path'
