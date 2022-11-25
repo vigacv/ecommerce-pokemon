@@ -8,6 +8,7 @@ services:
       - ASPNETCORE_URLS=http://+:8000
       - "BlobStorage:ConnectionString=DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://azurite:10000/devstoreaccount1;"
       - "CosmosDb:ConnectionString=mongodb://catalog.db:27017"
+      - "FrontendUrl=http://localhost:3000"
     ports:
       - "8000:8000"
     depends_on:
